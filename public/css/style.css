@@ -20,7 +20,8 @@ body {
 .navbar-container nav a {
     color: white;
     text-decoration: none;
-    position: relative
+    position: relative;
+    margin: 0 10px
 }
 
 .navbar-container nav a::after {
@@ -43,7 +44,36 @@ body {
 .search-form input:nth-child(1) {
     border-radius: 10px;
     border: none;
-    padding: 2px 50px
+    padding: 3px 50px;
+    outline: 0;
+    border: 1px solid white;
+    transition-duration: .3s;
+}
+
+.search-form button {
+    content: "";
+    width: 16px;
+    height: 16px;
+    background: url("../img/search.png");
+    background-position: center;
+    background-size: cover;
+    z-index: 2;
+    border: none;
+    display: inline-block;
+    padding: 3px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.search-form input:focus {
+    border: 1px solid rgba(0, 0, 0, 0.089);
+    background: rgb(231, 231, 231);
+    transition-duration: .3s;
+}
+
+.search-form input:focus::placeholder {
+    color: black;
+    transition-duration: .3s;
 }
 
 .media-img {
@@ -99,3 +129,20 @@ body {
     text-overflow: ellipsis;
     overflow-y: auto;
 }  
+
+.media-container .desc::-webkit-scrollbar {
+    width: 5px
+}
+
+.desc::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.desc::-webkit-scrollbar-thumb {
+    background: rgb(175, 175, 175);
+}
+
+.desc::-webkit-scrollbar-thumb:hover {
+    background: rgba(85, 85, 85, 0.712);
+
+}
