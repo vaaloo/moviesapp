@@ -1,0 +1,8 @@
+<%- include("partials/header") -%>
+<%- include("partials/search") -%>
+    <div class="medias">
+        <% medias.forEach(media => { %>
+            <%- include("partials/media", { media }) -%>
+        <% }) %>
+    </div>
+<%- include("partials/footer") -%>
