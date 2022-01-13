@@ -1,0 +1,38 @@
+<%- include("partials/header") -%>
+<%- include("partials/navbarFilms") -%>
+<%- include("partials/wave") -%>
+<div class="adv-page-container">
+<% if (img !== null) { %>
+    <img src="https://image.tmdb.org/t/p/original<%= img %>" class="media-img-adv" alt="">
+<% } else { %>
+    <div class="no-image-adv">
+        <div class="logo-no-img-adv"></div>
+    </div>
+<% } %>
+    <p class="adv-page-name"><%= name %>
+    <% if (year !== "null") { %>
+        (<%= year.substr(0, 4) %>)
+    <% } else { %>
+        (Aucune date trouvée)
+    <% } %>
+    </p>
+    <p class="adv-page-desc">
+        <% if (desc !== "") { %>
+            <%= desc %>
+        <% } else {%>
+            Aucune description.
+        <% } %>
+    </p>
+    <div class="infos-adv">
+        <p class="note"><%= note %></p>
+        <p class="budget">
+            <% if (budget !== "0") { %>
+                Budget : <%= budget %> €
+            <% } else { %>
+                Aucun budget trouvé
+            <% } %>
+        </p>
+    </div>
+</div>
+<script src="/js/mediaTv.js" defer></script>
+<%- include("partials/footer") -%>

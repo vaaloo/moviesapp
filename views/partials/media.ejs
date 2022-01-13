@@ -1,17 +1,17 @@
-<div class="media-container">
-<% if (media.image !== null) { %>
-        <img src="https://image.tmdb.org/t/p/original<%= media.image %>" class="media-img" alt="">
-<% } else { %>
-        <div class="no-image">
-            <div class="logo-no-img"></div>
+<div class="media-container" id="<%= media.id %>">
+    <% if (media.image !== null) { %>
+            <img src="https://image.tmdb.org/t/p/original<%= media.image %>" class="media-img" alt="">
+    <% } else { %>
+            <div class="no-image">
+                <div class="logo-no-img"></div>
+            </div>
+    <% } %>
+        <div class="text">
+            <p><%= media.name %></p>
+    <% if (media.desc !== "") { %>
+        <p class="desc"><%= media.desc %></p>
+    <% } else { %>
+        <p class="desc">Aucune description n'est disponible.</p>
+    <% } %>
         </div>
-<% } %>
-    <div class="text">
-        <p><%= media.name %></p>
-<% if (media.desc !== "") { %>
-    <p class="desc"><%= media.desc %></p>
-<% } else { %>
-    <p class="desc">Aucune description n'est disponible.</p>
-<% } %>
-    </div>
 </div>

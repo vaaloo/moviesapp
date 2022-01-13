@@ -1,8 +1,21 @@
 <%- include("partials/header") -%>
 <%- include("partials/navbarSeries") -%>
+<%- include("partials/wave") -%>
+    <% if (medias.length) { %>
+        <h1 class="search-text">Résultats pour la recherche : <%= search %></h1>
+    <% } %>
     <div class="medias">
+    <% if (medias.length) { %>
         <% medias.forEach(media => { %>
             <%- include("partials/media", { media }) -%>
         <% }) %>
+    <% } else { %>
+        <p class="no-media">Aucun résultat à votre recherche : <%= search %></p>
+    <% } %>
     </div>
+    <script src="/js/mediaTv.js" defer></script>
+    <script>
+        let input = document.getElementById("inputSearch");
+        input.setAttribute("value", "<%= search %>")
+    </script>
 <%- include("partials/footer") -%>

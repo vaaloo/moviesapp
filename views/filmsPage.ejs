@@ -1,8 +1,14 @@
 <%- include("partials/header") -%>
 <%- include("partials/navbarFilms") -%>
-    <div class="medias">
+<%- include("partials/wave") -%>
+<div class="medias">
+    <% if (medias.length) { %>
         <% medias.forEach(media => { %>
             <%- include("partials/media", { media }) -%>
         <% }) %>
+    <% } else { %>
+        <p class="no-media">Aucun résultat à votre recherche : <%= search %></p>
+    <% } %>
     </div>
+<script src="js/mediaMovie.js"></script>
 <%- include("partials/footer") -%>
