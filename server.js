@@ -14,8 +14,48 @@ const mdb = new MovieDB(apiKey, {
 app.set('view engine', 'ejs');
 app.use(express.static("public"))
 
-app.get('/', (req, res) => {
-    res.render("index")
+app.get('/', async (req, res) => {
+    try {
+        const argsFilm = {
+            pathParameters: {
+                media_type: "movie",
+                time_window: "week"
+            },
+        };
+        const argsSeries = {
+            pathParameters: {
+                media_type: "tv",
+                time_window: "week"
+            }
+        }
+        let trendingMovies = await mdb.trending.getTrending(argsFilm)
+        let trendingSeries = await mdb.trending.getTrending(argsSeries)
+        let resultsMovies = trendingMovies.data.results
+        let resultsTv = trendingSeries.data.results
+        let arrayMovie = new Array()
+        let arrayTv = new Array()
+        for (let i = 0; i < 5; i++) {
+            let resultMovie = resultsMovies[i]
+            let resultTv  = resultsTv[i]
+            arrayMovie.push({
+                name: resultMovie.title,
+                image: resultMovie.poster_path,
+                id: resultMovie.id
+            })
+            arrayTv.push({
+                name: resultTv.name,
+                image: resultTv.poster_path,
+                id: resultTv.id
+            })
+        }
+        res.render("index", {
+             films: arrayMovie,
+             series: arrayTv
+        })
+
+    } catch (error) {
+        console.error(error);
+    }
 })
 
 app.get("/series", (req, res) => {

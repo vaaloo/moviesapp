@@ -13,8 +13,7 @@ body {
     justify-content: space-around;
     background: #667eea;
     color: white;
-    z-index: 1000;
-
+    z-index: 1;
 }
 
 .navbar-container nav a {
@@ -268,4 +267,43 @@ body {
     background-position: center;
     background-size: cover;
     margin: 0 0 -4.8px 5px;
+}
+
+.trendingMovies h1, .trendingSeries h1 {
+    text-align: center;
+}
+
+.films-container, .series-container {
+    height: 280px;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.film, .serie {
+    height: 100%;
+    width: 166px;
+    margin: 0 10px
+}
+
+.film img, .serie img {
+    width: 166px;
+    height: 250px;
+    border-radius:10px;
+}
+
+.film p, .serie p {
+    margin: 5px 0 0 0;
+    text-align: center
+}
+
+footer {
+    display: flex;
+    background: #667eea;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    padding: 1rem 0;
+    margin-top: 50px;
 }

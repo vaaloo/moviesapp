@@ -1,62 +1,27 @@
 <%- include("partials/header") -%>
     <%- include("partials/navbarIndex") -%>
     <%- include("partials/wave") -%>
-    <p>
-        Vous cherchez des informations sur vos films et vos séries préférés ?
-        Vous êtes au bon endroit ! En effet, ce site répertorie tous les films et séries
-        de la Terre (ou presque).
-    </p>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <div class="trendingMovies">
+        <h1>Films du moment</h1>
+        <div class="films-container">
+            <% films.forEach(film => { %>
+                <div class="film">
+                    <img src="https://image.tmdb.org/t/p/original<%= film.image %>" alt="">
+                    <p><%= film.name %></p>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+    <div class="trendingSeries">
+        <h1>Séries du moment</h1>
+        <div class="series-container">
+            <% series.forEach(serie => { %>
+                <div class="serie">
+                    <img src="https://image.tmdb.org/t/p/original<%= serie.image %>" alt="">
+                    <p><%= serie.name %>></p>
+                </div>
+            <% }) %>
+        </div>
+    </div>
 
 <%- include("partials/footer") -%>
