@@ -1,5 +1,4 @@
 require("dotenv").config();
-const { TextChannel, CommandInteractionOptionResolver } = require("discord.js");
 const express = require("express");
 const app = express();
 let apiKey = process.env.THEMOVIEDB_API_KEY
