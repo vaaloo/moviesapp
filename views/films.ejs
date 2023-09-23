@@ -1,4 +1,15 @@
 <%- include("partials/header") -%>
 <%- include("partials/navbarFilms") -%>
 <%- include("partials/wave") -%>
+<div class="trendingMovies">
+    <h1>Films populaires</h1>
+    <div class="films-container">
+        <% films.forEach(film => { %>
+            <div class="film">
+                <img src="https://image.tmdb.org/t/p/original<%= film.image %>" alt="">
+                <p><%= film.name %></p>
+            </div>
+        <% }) %>
+    </div>
+</div>
 <%- include("partials/footer") -%>

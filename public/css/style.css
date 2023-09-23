@@ -55,7 +55,7 @@ body {
     height: 16px;
     background: url("../img/search.png");
     background-position: center;
-    background-size: cover;
+    background-size: contain;
     z-index: 2;
     border: none;
     display: inline-block;
@@ -64,7 +64,9 @@ body {
     margin-left: 5px;
 }
 
-.search-form input:focus {
+
+
+/*.search-form input:focus {
     border: 1px solid rgba(0, 0, 0, 0.089);
     background: rgb(231, 231, 231);
     transition-duration: .3s;
@@ -73,7 +75,7 @@ body {
 .search-form input:focus::placeholder {
     color: black;
     transition-duration: .3s;
-}
+}*/
 
 .media-img {
     width: 80px;
@@ -193,8 +195,9 @@ body {
 
 .wave {
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     left: 0;
+    width: 100%
 }
 
 .search-text {

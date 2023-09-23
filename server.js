@@ -61,8 +61,21 @@ app.get("/series", (req, res) => {
     res.render("series")
 })
 
-app.get("/films", (req, res) => {
-    res.render("films")
+app.get("/films", async (req, res) => {
+    let moviePopular = await mdb.movie.getPopular()
+    console.log(moviePopular.data.results);
+    let popularArray = new Array();
+    for (let i = 0; i < 5; i++) {
+        let result = moviePopular.data.results[i]
+        popularArray.push({
+            name: result.title,
+            image: result.poster_path,
+            id: result.id
+        })
+    }
+    res.render("films", {
+        films: popularArray
+    })
 })
 
 app.get("/getTv", async (req, res) => {
